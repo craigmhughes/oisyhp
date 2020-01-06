@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book | Oisyhp.co.uk</title>
+
+    <link href="./assets/app.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="preconnect">
+
+    <script src="./assets/app.min.js" defer></script>
+</head>
+<body>
+    <!-- UPGRADES MADE
+            - WebP format from jpegs.
+            - Preconnect to font server.
+            - Removed unused font-weights.
+            - Blocked requests to images when unneeded.
+
+            a11y
+            - Contrast ratio colors
+            - image alt text
+    -->
+
+    <!-- Skip nav to content -->
+    <a href='#main-content' id="skip-link">Skip to main content</a>
+
+    
+
+    <header class="booking">
+        <div class="container">
+            <a href="index.html" id="logo"><img src="./assets/images/oisyhp.svg" alt="Oisyhp.co.uk"></a>
+            <a href="tel:5555-555-5555" id="phone-number"><img src="assets/images/phone.svg" class="icon" alt="Telephone"> 5555 555 5555</a>
+            <p>Please select your appointment type</p>
+        </div>
+    </header>
+
+    <main id="main-content" class="booking">   
+        
+        <div class="container">
+            <button id="back-button" class="hidden"><img src="assets/images/chevron-left.svg" class="icon" alt=""> Back</button>
+        
+            <!-- Scroll to top -->
+            <img src="assets/images/chevron-up.svg" alt="Return to top" id="scrolltop" class="hidden"/>
+        </div>
+
+        <section class="container" id="booking-menu-1">
+            <h1 class="head-text" tabindex="0">I am a...</h1>
+            <p tabindex="0">Choose an option below</p>
+
+            <div id="customer-selection">
+                <button value="New Patient" class="customer-select">New Patient <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button>
+                <button class="customer-select">Existing Patient <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+            </div>
+        </section>
+
+        <section class="container hidden" id="booking-menu-2">
+            <p id="customer-select-display">Customer Not Specified</p>
+            <h1 class="head-text" tabindex="0">Show me appointments for...</h1>
+            <p>Choose an option below</p>
+
+            <div id="appointment-selection">
+                <button class="appointment-select">Physiotherapy <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button>
+                <button class="appointment-select">Neurological Physiotherapy <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+                <button class="appointment-select">Pilates <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+                <button class="appointment-select">Massage <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+                <button class="appointment-select">Podiatry <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+                <button class="appointment-select">Orthotics <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+                <button class="appointment-select">Everything <img src="./assets/images/chevron-right.svg" class="icon" alt=""></button class="appointment-select">
+            </div>
+        </section>
+
+        <div class="container hidden" id="booking-menu-3">
+            <p id="appointment-select-display">Appointment Not Specified</p>
+            <h1 class="head-text" tabindex="0">Available Appointments</h1>
+            <p>Choose an option below</p>
+
+            <section id="booking-selection">
+                
+            </section>
+        </div>
+    </main>
+
+    <script type="text/javascript">
+        // HTMLCollection for appointment buttons.
+        appointmentTypes = document.getElementsByClassName("appointment-select");
+        
+        let bookingArea = document.getElementById("booking-selection");
+
+        // Only request images if necessary (window is wide enough). 
+        let isDesktop = window.innerWidth >= 700;
+
+        console.log(window.innerWidth);
+
+        for(let i = 0; i < 35; i++){
+
+            let apptType = appointmentTypes[Math.floor(Math.random() * (appointmentTypes.length - 2))].innerText;
+            let custType = Math.random() > 0.5 ? "New" : "Existing";
+
+            let bookingDiv = `
+                <div class="appointment-card ${isDesktop ? "desktop" : ""}">
+                    ${isDesktop ? `<img class="feature" src="assets/images/appt-imgs/physio-${i}.webp" alt="${custType} patient enjoying ${apptType}"/>` : ""}
+                    <div>
+                        <h2 class="title" tabindex="0">${apptType} - ${custType} Patient</h2>
+                        <p class="price" tabindex="1">
+                            From 
+                            <span>£${Math.floor(Math.random() * 99) + 30}<span>.${Math.floor(Math.random() * 80) + 10}</span></span> 
+                            Usually <strong>£${Math.floor(Math.random() * 100) + 100}</strong>
+                        </p>
+                        <button>Book Now <img src="./assets/images/chevron-right.svg" alt=""/></button>
+                    </div>
+                </div>
+            `;
+
+            bookingArea.insertAdjacentHTML("beforeend", bookingDiv);
+        }
+    </script>
+</body>
+</html>

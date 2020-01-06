@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap");
+header.booking {
+  width: 100%;
+  padding: 1em 0;
+  font-size: 1.25em;
+  text-align: center;
+}
+header.booking #logo {
+  height: 100px;
+  width: auto;
+  max-width: 400px;
+  margin: 0 auto;
+}
+header.booking > .container > a {
+  color: inherit;
+  text-decoration: none;
+}
+header.booking > .container > a > img {
+  margin-right: 0.4em;
+  margin-bottom: -0.1em;
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+}
+header.booking > .container > a#phone-number {
+  background-color: #FCBF38;
+  color: #1B3F98;
+  border-radius: 0.25em;
+  padding: 0.25em 1em;
+  font-weight: 600;
+  width: auto;
+  display: inline-block;
+}
+header.booking > .container > a, header.booking > .container > p {
+  color: #333333;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+#main-content.booking {
+  font-size: 1.25em;
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+#main-content.booking #booking-menu-1.hidden, #main-content.booking #booking-menu-2.hidden, #main-content.booking #booking-menu-3.hidden {
+  display: none;
+}
+#main-content.booking button.appointment-select, #main-content.booking button.customer-select {
+  background: #e3e3e3;
+  border: none;
+  border-left: 0.25em solid #FCBF38;
+  font-size: 1.5em;
+  padding: 1em;
+  width: 100%;
+  text-align: left;
+  margin: 0.25em 0;
+  display: flex;
+  justify-content: space-between;
+}
+#main-content.booking button.appointment-select > p, #main-content.booking button.customer-select > p {
+  margin: 0;
+}
+#main-content.booking button.appointment-select > .icon, #main-content.booking button.customer-select > .icon {
+  height: 1.25em;
+}
+#main-content.booking > .container {
+  max-width: 640px;
+}
+#main-content.booking > .container > p {
+  color: #313131;
+  margin: 0 0 2em 0;
+}
+#main-content.booking > .container > .head-text {
+  color: #222;
+  font-weight: 600;
+  margin: 0em 0 0.25em 0;
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  line-height: 100%;
+  word-break: break-word;
+  hyphens: auto;
+}
+#main-content.booking > .container > #appointment-selection {
+  margin-top: 2em;
+  text-align: left;
+}
+
+.appointment-card {
+  background: #e3e3e3;
+  border-left: 0.25em solid #FCBF38;
+  text-align: center;
+}
+.appointment-card.desktop {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  grid-gap: 1em;
+  margin: 1em 0;
+  text-align: left;
+}
+.appointment-card > img.feature {
+  width: 100%;
+  position: relative;
+  left: -5px;
+  border-right: 5px solid #FCBF38;
+}
+.appointment-card > div {
+  padding: 2em 0.5em;
+}
+.appointment-card > div > .title {
+  font-weight: 600;
+  color: #1B3F98;
+  text-decoration: underline;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.appointment-card > div > .price {
+  color: grey;
+  font-size: 0.9em;
+  letter-spacing: -0.01em;
+  margin-top: 0em;
+}
+.appointment-card > div > .price > span {
+  font-size: 2em;
+  color: #222;
+  font-weight: 600;
+}
+.appointment-card > div > .price > span::before {
+  content: "\a";
+  white-space: pre;
+}
+.appointment-card > div > .price > span::after {
+  content: "\a";
+  white-space: pre-line;
+}
+.appointment-card > div > .price > span > span {
+  font-size: 0.5em;
+}
+.appointment-card > div > .price > strong {
+  color: #222;
+}
+.appointment-card > div button {
+  background: #FCBF38;
+  color: #1B3F98;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  padding: 0.6em 0.6em 0.6em 1.2em;
+  border-radius: 0.5em;
+}
+
+@media screen and (max-width: 700px) {
+  .appointment-card {
+    display: block;
+    padding: 0em 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .appointment-card > img {
+    display: none;
+  }
+  .appointment-card > div > button {
+    margin: 0 auto;
+  }
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: calc(100vh - 1.5em);
+  padding-bottom: 0.5em;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+a > .icon {
+  height: calc(1em - 4px);
+}
+
+.hidden {
+  display: none;
+}
+
+#skip-link {
+  position: absolute;
+  top: -2em;
+  left: 0;
+}
+#skip-link:focus {
+  top: 0;
+}
+
+#back-button {
+  background: #FCBF38;
+  color: #1B3F98;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  padding: 0.6em 1.2em 0.6em 0.6em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+#back-button > .icon {
+  height: calc(1.2em - 3px);
+  margin-right: 0.5em;
+}
+#back-button.hidden {
+  display: none;
+}
+
+#scrolltop {
+  font-size: 1.5em;
+  padding: 1em;
+  background: #FCBF38;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  z-index: 100;
+}
+
+/*# sourceMappingURL=app.css.map */

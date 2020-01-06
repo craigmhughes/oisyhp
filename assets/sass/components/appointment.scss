@@ -1,0 +1,94 @@
+.appointment-card {
+    background: #e3e3e3;
+    border-left: 0.25em solid #FCBF38;
+    text-align: center;
+
+    &.desktop {
+        display: grid;
+        grid-template-columns: 4fr 6fr;
+        grid-gap: 1em;
+        margin: 1em 0;
+        text-align: left;
+    }
+
+    & > img.feature {
+        width: 100%;
+        position: relative;
+        left: -5px;
+        border-right: 5px solid #FCBF38;
+    }
+
+    & > div {
+        padding: 2em 0.5em;
+
+        & > .title {
+            font-weight: 600;
+            color: #1B3F98;
+            text-decoration: underline;
+            margin-bottom: 0;
+            font-size: 1em;
+        }
+
+        & > .price {
+            color: grey;
+            font-size: 0.9em;
+            letter-spacing: -0.01em;
+            margin-top: 0em;
+
+            & > span {
+                font-size: 2em;
+                color: #222;
+                font-weight: 600;
+
+                &::before {
+                    content: "\A";
+                    white-space: pre;
+                }
+
+                &::after {
+                    content: "\A";
+                    white-space: pre-line;
+                }
+
+                & > span {
+                    font-size: 0.5em;
+                }
+            }
+
+            & > strong {
+                color: #222;
+            }
+        }
+
+        button {
+            background: #FCBF38;
+            color: #1B3F98;
+            font-weight: 600;
+            border: none;
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+            padding: 0.6em 0.6em 0.6em 1.2em;
+            border-radius: 0.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 700px){
+    .appointment-card {
+        display: block;
+        padding: 0em 2em;
+        margin-bottom: 1em;
+        text-align: center;
+
+        & > img {
+            display: none;
+        }
+
+        & > div {
+            & > button {
+                margin: 0 auto;
+            }
+        }
+    }
+}

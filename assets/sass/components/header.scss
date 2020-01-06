@@ -1,0 +1,47 @@
+header.booking {
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1.25em;
+    text-align: center;
+
+    #logo {
+        height: 100px;
+        width: auto;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    & > .container {
+
+        & > a {
+            color: inherit;
+            text-decoration: none;
+
+            & > img {
+                margin-right: 0.4em;
+                margin-bottom: -0.1em;
+                display: inline-flex;
+                justify-content: center;
+                align-self: center;
+            }
+
+            &#phone-number {
+                background-color: #FCBF38;
+                color: #1B3F98;
+                border-radius: 0.25em;
+                padding: 0.25em 1em;
+                font-weight: 600;
+                width: auto;
+                display: inline-block;
+
+            }
+        }
+
+        & > a, & > p {
+            color: rgb(51, 51, 51);
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+    }
+}
